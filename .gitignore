@@ -1,0 +1,21 @@
+# NetBeans / Ant
+build/
+dist/
+out/
+nbproject/private/
+sources.txt
+
+# IntelliJ / VS Code / Eclipse
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Compilados
+*.class
+
+# Sistema
+.DS_Store
+Thumbs.db
