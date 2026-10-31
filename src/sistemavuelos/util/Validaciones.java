@@ -51,7 +51,7 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         return texto.trim();
     }
 
-    /** Devuelve el codigo en mayusculas. Formato: 2-3 letras y 2-4 numeros (ejemplo: AV123). */
+    //para devolverdatos en mayuscula
     public static String validarCodigoVuelo(String texto) throws DatosInvalidosException {
         String codigo = validarTexto(texto).toUpperCase();
         if (!CODIGO_VUELO.matcher(codigo).matches()) {
@@ -60,7 +60,7 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         return codigo;
     }
 
-    /** Formato: 8 digitos, guion y 1 digito (ejemplo: 01234567-8). */
+    //formato de Dui 8 digitos
     public static String validarDui(String texto) throws DatosInvalidosException {
         String dui = validarTexto(texto);
         if (!DUI.matcher(dui).matches()) {
@@ -69,7 +69,7 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         return dui;
     }
 
-    /** 8 digitos, con o sin guion (ejemplo: 7123-4567). */
+    //validacion cel
     public static String validarTelefono(String texto) throws DatosInvalidosException {
         String tel = validarTexto(texto);
         if (!TELEFONO.matcher(tel).matches()) {
@@ -78,7 +78,7 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         return tel;
     }
 
-    /** Formato yyyy-MM-dd. */
+    //fechas con formato yyyy-mm-dd
     public static LocalDate validarFecha(String texto) throws DatosInvalidosException {
         try {
             return LocalDate.parse(texto.trim());
@@ -87,7 +87,7 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         }
     }
 
-    /** Formato HH:mm en 24 horas. */
+    // Formato HH:mm en 24 horas.
     public static LocalTime validarHora(String texto) throws DatosInvalidosException {
         try {
             return LocalTime.parse(texto.trim());
