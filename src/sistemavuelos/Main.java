@@ -10,9 +10,7 @@ import sistemavuelos.servicio.GestorVuelos;
 import sistemavuelos.util.Validaciones;
 
 /**
- * Punto de entrada. PERSONA C.
- * Es el UNICO lugar donde se hace "new" de los gestores y el arbol, y se pasan por
- * constructor, asi todos trabajan con las mismas instancias. Aqui solo se conecta.
+ * Punto de entrada.
  */
 public class Main {
 
@@ -27,8 +25,8 @@ public class Main {
         MenuReservas menuReservas = new MenuReservas(gestorReservas, gestorVuelos);
         MenuDestinos menuDestinos = new MenuDestinos(arbol);
 
-        // TODO (Persona C): menu principal (1 Vuelos, 2 Reservas, 3 Destinos, 0 Salir)
-        // que llame a menuVuelos.mostrar(sc), menuReservas.mostrar(sc) y menuDestinos.mostrar(sc)
+        // TODO: menu principal (1 Vuelos, 2 Reservas, 3 Destinos, 0 Salir)
+        // llamamos a menuVuelos.mostrar(sc), menuReservas.mostrar(sc) y menuDestinos.mostrar(sc)
         sc.close();
     }
 }
