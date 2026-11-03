@@ -7,7 +7,7 @@ import sistemavuelos.modelo.Vuelo;
 /**
  * BST ordenado por destino (comparar con compareToIgnoreCase).
  *
- * PERSONA C: implementar los 4 metodos. Las firmas ya estan acordadas en la guia
+ * Implementar los 4 metodos. Las firmas ya estan acordadas en la guia
  * (seccion 9): no cambiarlas sin avisar.
  *
  * Mientras esten vacios, el resto del sistema compila y corre sin romperse.
@@ -18,7 +18,7 @@ public class ArbolDestinos {
 
     /** Inserta el vuelo en el nodo de su destino. Si el nodo no existe, lo crea. */
     public void insertar(Vuelo vuelo) {
-        // TODO (Persona C)
+        // TODO 
     }
 
     /**
@@ -27,12 +27,12 @@ public class ArbolDestinos {
      * simplemente se omite al listar (nodo.estaVacio()).
      */
     public void eliminarVuelo(Vuelo vuelo) {
-        // TODO (Persona C)
+        // TODO 
     }
 
     /** Vuelos hacia ese destino. Lista vacia si no hay ninguno. */
     public List<Vuelo> buscarPorDestino(String destino) {
-        // TODO (Persona C)
+        // TODO 
         return new ArrayList<>();
     }
 
@@ -41,6 +41,6 @@ public class ArbolDestinos {
      * Debe ser RECURSIVO (requisito del PDF): crear un metodo privado inorden(NodoDestino nodo).
      */
     public void listarDestinosInorden() {
-        // TODO (Persona C)
+        
     }
 }

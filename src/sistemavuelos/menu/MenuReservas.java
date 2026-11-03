@@ -15,7 +15,7 @@ import sistemavuelos.servicio.GestorVuelos;
 import sistemavuelos.util.Validaciones;
 
 /**
- * Menu de reservas. PERSONA B.
+ * Menu de reservas.
  * Solo lee y muestra; la logica esta en GestorReservas.
  * Toda lectura del teclado pasa por Validaciones, que vuelve a preguntar si el dato es malo.
  */

@@ -29,7 +29,7 @@ public class GestorReservas {
     }
 
     /**
-     * Reserva un asiento. Si el vuelo esta lleno, el pasajero entra a la cola de espera.
+     * Reservar un asiento. Si el vuelo esta lleno, el pasajero entra a la cola de espera.
      *
      * @return la Reserva creada, o null si el vuelo estaba lleno y el pasajero quedo en espera
      */
@@ -82,7 +82,7 @@ public class GestorReservas {
     }
 
     /**
-     * Cancela una reserva y devuelve la reserva cancelada.
+     * Cancelar una reserva y devuelve la reserva cancelada.
      * Si habia gente esperando en ese vuelo, el primero de la cola se queda con el asiento liberado.
      */
     public Reserva cancelar(int idReserva) throws ReservaNoEncontradaException {
