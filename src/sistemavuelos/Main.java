@@ -14,8 +14,7 @@ import sistemavuelos.util.Validaciones;
  */
 public class Main {
 
-    // Usamos false por el momento, para que la opcion 3 diga que esta en construccion para mientras se completa
-    // en vez de quedarse muda.
+    // Usamos false por el momento, para que la opcion 3 diga que esta en construccion para mientras se completa en vez de quedarse muda.
     private static final boolean DESTINOS_LISTO = false;
 
     public static void main(String[] args) {

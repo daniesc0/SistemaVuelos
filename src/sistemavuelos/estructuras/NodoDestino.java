@@ -24,7 +24,7 @@ public class NodoDestino {
         vuelos.add(vuelo);
     }
 
-    /** Quita el vuelo del nodo. Devuelve true si estaba. */
+    // Quita el vuelo del nodo. Devuelve true si estaba.
     public boolean quitarVuelo(Vuelo vuelo) {
         return vuelos.remove(vuelo);
     }
@@ -33,7 +33,7 @@ public class NodoDestino {
         return vuelos.isEmpty();
     }
 
-    /** Vista de solo lectura de los vuelos de este destino. */
+    //Vista de solo lectura de los vuelos de este destino.
     public List<Vuelo> getVuelos() {
         return Collections.unmodifiableList(vuelos);
     }
