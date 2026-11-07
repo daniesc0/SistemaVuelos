@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import sistemavuelos.modelo.Vuelo;
 
-/**
- * BST ordenado por destino (comparar con compareToIgnoreCase).
- *
- * Implementar los 4 metodos. Las firmas ya estan acordadas en la guia
- * (seccion 9): no cambiarlas sin avisar.
- *
- * Mientras esten vacios, el resto del sistema compila y corre sin romperse.
- */
+//no tocar
 public class ArbolDestinos {
 
     private NodoDestino raiz;

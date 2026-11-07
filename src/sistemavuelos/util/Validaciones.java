@@ -1,7 +1,8 @@
-    package sistemavuelos.util;
+package sistemavuelos.util;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.YearMonth;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -31,7 +32,7 @@ public class Validaciones {
         return valor;
     }
 
-public static double validarPrecio(String texto) throws DatosInvalidosException {
+    public static double validarPrecio(String texto) throws DatosInvalidosException {
         double valor;
         try {
             valor = Double.parseDouble(texto.trim());
@@ -78,13 +79,37 @@ public static double validarPrecio(String texto) throws DatosInvalidosException 
         return tel;
     }
 
-    //fechas con formato yyyy-mm-dd
+    //fechas: acepta 1-06-2026, 01/06/2026, 1.6.2026 y 2026-12-25 (dia-mes-anio o anio-mes-dia)
     public static LocalDate validarFecha(String texto) throws DatosInvalidosException {
-        try {
-            return LocalDate.parse(texto.trim());
-        } catch (DateTimeParseException e) {
-            throw new DatosInvalidosException("Fecha invalida. Formato: yyyy-MM-dd (ejemplo: 2026-12-25)");
+        String[] partes = validarTexto(texto).replace('/', '-').replace('.', '-').split("-");
+        if (partes.length != 3) {
+            throw new DatosInvalidosException("Formato de fecha invalido. Usa dia-mes-anio (ejemplo: 25-12-2026 o 25/12/2026)");
         }
+        int dia, mes, anio;
+        try {
+            if (partes[0].trim().length() == 4) {              // anio-mes-dia
+                anio = Integer.parseInt(partes[0].trim());
+                mes = Integer.parseInt(partes[1].trim());
+                dia = Integer.parseInt(partes[2].trim());
+            } else {                                           // dia-mes-anio
+                dia = Integer.parseInt(partes[0].trim());
+                mes = Integer.parseInt(partes[1].trim());
+                anio = Integer.parseInt(partes[2].trim());
+                if (partes[2].trim().length() != 4) {
+                    throw new DatosInvalidosException("El anio debe tener 4 digitos (ejemplo: 2026)");
+                }
+            }
+        } catch (NumberFormatException e) {
+            throw new DatosInvalidosException("La fecha solo puede llevar numeros y separadores (- o /). Ejemplo: 25-12-2026");
+        }
+        if (mes < 1 || mes > 12) {
+            throw new DatosInvalidosException("El mes debe estar entre 1 y 12 (escribiste " + mes + ")");
+        }
+        int maxDia = YearMonth.of(anio, mes).lengthOfMonth();
+        if (dia < 1 || dia > maxDia) {
+            throw new DatosInvalidosException("El mes " + mes + " del anio " + anio + " tiene " + maxDia + " dias (escribiste " + dia + ")");
+        }
+        return LocalDate.of(anio, mes, dia);
     }
 
     // Formato HH:mm en 24 horas.
