@@ -3,6 +3,7 @@ package sistemavuelos.util;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -112,10 +113,11 @@ public class Validaciones {
         return LocalDate.of(anio, mes, dia);
     }
 
-    // Formato HH:mm en 24 horas.
+    // Formato HH:mm en 24 horas. Tambien acepta la hora sin cero adelante (8:30 en vez de 08:30),
+    // porque el menu de vuelos le dice al usuario que puede escribirla asi.
     public static LocalTime validarHora(String texto) throws DatosInvalidosException {
         try {
-            return LocalTime.parse(texto.trim());
+            return LocalTime.parse(texto.trim(), DateTimeFormatter.ofPattern("H:mm"));
         } catch (DateTimeParseException e) {
             throw new DatosInvalidosException("Hora invalida. Formato: HH:mm en 24 horas (ejemplo: 14:30)");
         }

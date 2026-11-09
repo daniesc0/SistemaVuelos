@@ -16,10 +16,6 @@ import sistemavuelos.util.Validaciones;
  */
 public class Main {
 
-    // Usamos false mientras el arbol de destinos no este terminado, para que la opcion 3 diga que esta
-    // en construccion en vez de quedarse muda. Cuando ArbolDestinos ya funcione se cambia a true.
-    private static final boolean DESTINOS_LISTO = false;
-
     // true = al arrancar se cargan los vuelos, pasajeros y reservas de ejemplo (clase DatosEjemplo).
     // Ponerlo en false si queremos empezar con el sistema vacio.
     private static final boolean CARGAR_EJEMPLOS = true;
@@ -63,11 +59,7 @@ public class Main {
                     menuReservas.mostrar(sc);
                     break;
                 case 3:
-                    if (DESTINOS_LISTO) {
-                        menuDestinos.mostrar(sc);
-                    } else {
-                        Consola.aviso("Destinos (arbol BST) todavia esta por completarse.");
-                    }
+                    menuDestinos.mostrar(sc);
                     break;
                 default:
                     break; // 0: salimos del ciclo
